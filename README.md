@@ -71,8 +71,28 @@ Tutorial de como gerar documentação com MKDocs.
     ```
     
 13. No repositório do GitHub, acesse as configurações, e no menu à esquerda, selecione GitHub Pages:
-  
 
+    ![tutorial_1.png](docs/images/tutorial_1.png)
+    ![tutorial_2.png](docs/images/tutorial_2.png)
+
+14. Mude os dados da página de maneira que eles fiquem como na segunda figura:
+    **Antes**
+    ![tutorial_4.png](docs/images/tutorial_4.png)
+    **Depois**
+    ![tutorial_3.png](docs/images/tutorial_3.png)
+
+15. Na pasta do seu repositório local, crie uma pasta `.github`. Dentro dela, crie outra pasta `workflow` e, dentro 
+    desta, crie um arquivo `documentation.yml`:
+   
+    ```
+    .github
+    └── workflows
+        └── documentation.yml
+    mkdocs.yml    YAML
+    docs/         Folder
+    └── index.md  Markdown
+    ```
+16. Dentro do arquivo `documentation.yml`, escreva o seguinte código-fonte:
 
 # Recursos adicionais
 
