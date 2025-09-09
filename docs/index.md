@@ -9,7 +9,7 @@ Tutorial de como gerar documentação com MKDocs.
 3. Abra a linha de comando e instale o MKDocs:
 
    ```bash
-   pip install mkdocs mkdocs-material pygments
+   pip install mkdocs
    ```
    
 4. Ainda na linha de comando, crie um novo projeto MKDocs a partir da pasta raiz do seu repositório:
@@ -69,9 +69,6 @@ Tutorial de como gerar documentação com MKDocs.
     git commit -m "adicionada documentação com MKDocs"
     git push origin main
     ```
-    
-13. No repositório do GitHub, acesse as configurações, e no menu à esquerda, selecione GitHub Pages:
-  
 
 
 # Recursos adicionais
