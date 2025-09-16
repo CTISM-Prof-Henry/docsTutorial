@@ -15,13 +15,15 @@ Tutorial de como gerar documentação com MKDocs.
    ```bash
    mkdocs new .
    ```
-   **⚠️ NOTA:** Caso o comando não funcione, execute os comandos com `python -m mkdocs new .`
    
+   **⚠️ NOTA:** Caso o comando não funcione, execute os comandos com `python -m`. Por exemplo, `python -m mkdocs new .`,
+   `python -m mkdocs serve`, etc.
+
 5. Será criado um diretório com essa configuração:
    ```
-   mkdocs.yml    YAML
-   docs/         Folder
-   └── index.md  Markdown
+   mkdocs.yml    
+   docs/         
+   └── index.md  
    ```
 
 6. Abra o o arquivo `mkdocs.yml` e configure da seguinte forma:
@@ -60,7 +62,22 @@ Tutorial de como gerar documentação com MKDocs.
     mkdocs build
     ```
 
-13. Salve o conteúdo do repositório no GitHub:
+13. Crie um arquivo `requirements.txt` na pasta raiz do projeto, e escreva dentro dele
+    ```
+    mkdocs-material
+    pygments
+    mkdocs
+    ```
+    
+14. Seu diretório deve ter essa aparência agora:
+    ```
+    mkdocs.yml          
+    requirements.txt    
+    docs/               
+    └── index.md        
+    ```
+
+15. Salve o conteúdo do repositório no GitHub:
     
     ```bash
     git add .
@@ -68,27 +85,28 @@ Tutorial de como gerar documentação com MKDocs.
     git push origin main
     ```
     
-14. No repositório do GitHub, acesse as configurações, e no menu à esquerda, selecione GitHub Pages:
+16. No repositório do GitHub, acesse as configurações, e no menu à esquerda, selecione GitHub Pages:
 
     ![tutorial_1.png](docs/images/tutorial_1.png)
     ![tutorial_2.png](docs/images/tutorial_2.png)
 
-15. Mude os dados da página de maneira que eles fiquem como na seguinte figura:
+17. Mude os dados da página de maneira que eles fiquem como na seguinte figura:
 
     ![tutorial_4.png](docs/images/tutorial_4.png)
 
-16. Na pasta do seu repositório local, crie uma pasta `.github`. Dentro dela, crie outra pasta `workflow` e, dentro 
+18. Na pasta do seu repositório local, crie uma pasta `.github`. Dentro dela, crie outra pasta `workflow` e, dentro 
     desta, crie um arquivo `documentation.yml`:
-   
     ```
+    mkdocs.yml    
+    requirements.txt    
+    docs/         
+    └── index.md  
     .github
     └── workflows
         └── documentation.yml
-    mkdocs.yml    YAML
-    docs/         Folder
-    └── index.md  Markdown
     ```
-17. Dentro do arquivo `documentation.yml`, escreva o seguinte código-fonte:
+    
+19. Dentro do arquivo `documentation.yml`, escreva o seguinte código-fonte:
 
     ```yaml
     name: documentation.yml
@@ -97,7 +115,7 @@ Tutorial de como gerar documentação com MKDocs.
         branches:
           - main
     jobs:
-      test:
+      docs:
         runs-on: ubuntu-latest
         permissions:
           contents: 'read'
@@ -135,7 +153,7 @@ Tutorial de como gerar documentação com MKDocs.
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     ```
 
-18. Salve e envie os arquivos para o repositório remoto do GitHub:
+20. Salve e envie os arquivos para o repositório remoto do GitHub:
 
     ```bash
     git add .
@@ -143,13 +161,13 @@ Tutorial de como gerar documentação com MKDocs.
     git push origin main
     ```
     
-19. Pronto! Se tudo deu certo, sua documentação deve estar disponível em 
+21. Pronto! Se tudo deu certo, sua documentação deve estar disponível em 
     
     ```
     https://<nome do proprietário do repositório>.github.io/<nome do repositório>
     ```
 
-20. Por exemplo, este repositório está armazenado em 
+22. Por exemplo, este repositório está armazenado em 
     [https://ctism-prof-henry.github.io/docsTutorial](https://ctism-prof-henry.github.io/docsTutorial)
 
 
