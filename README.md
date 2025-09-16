@@ -15,7 +15,6 @@ Tutorial de como gerar documentação com MKDocs.
    ```bash
    mkdocs new .
    ```
-   
    **⚠️ NOTA:** Caso o comando não funcione, execute os comandos com `python -m`. Por exemplo, `python -m mkdocs new .`,
    `python -m mkdocs serve`, etc.
 
