@@ -93,7 +93,7 @@ Tutorial de como gerar documentação com MKDocs.
 
     ![tutorial_4.png](docs/images/tutorial_4.png)
 
-18. Na pasta do seu repositório local, crie uma pasta `.github`. Dentro dela, crie outra pasta `workflow` e, dentro 
+18. Na pasta do seu repositório local, crie uma pasta `.github`. Dentro dela, crie outra pasta `workflows` e, dentro 
     desta, crie um arquivo `documentation.yml`:
     ```
     mkdocs.yml    
