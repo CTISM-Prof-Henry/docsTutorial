@@ -117,35 +117,35 @@ Tutorial de como gerar documentação com MKDocs.
       docs:
         runs-on: ubuntu-latest
         permissions:
-          contents: 'read'
-          pages: 'write'
-          id-token: 'write'
+          contents: 'read'  # permite ler o conteúdo do repositório (necessário para clonar o código)
+          pages: 'write'  # permite escrever no GitHub Pages
+          id-token: 'write'  # permite autenticação OIDC (usada internamente pelo GitHub Actions para autorizar o deploy
         steps:
           - name: Clona repositório no servidor remoto do GitHub
             uses: actions/checkout@v5
-            
+    
           - name: Configura o interpretador Python
             uses: actions/setup-python@v4
             with:
               python-version: '3.x'
-              
+    
           - name: Instala bibliotecas Python
             run: |
               python -m pip install --upgrade pip
               pip install --requirement requirements.txt
-              
+    
           - name: Constrói páginas HTML com MKDocs
             run: mkdocs build
-            
-          - name: Transfere páginas HTML para o GitHub Pages
+    
+          - name: Configura o GitHub Pages
             uses: actions/configure-pages@v3
     
-          - name: Upload artifact
+          - name: Envia dados para o GitHub Pages
             uses: actions/upload-pages-artifact@v3
             with:
               path: 'site/'
     
-          - name: Publica páginas HTML
+          - name: Publica páginas HTML no GitHub Pages
             id: deployment
             uses: actions/deploy-pages@v4
             env:
